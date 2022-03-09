@@ -1,0 +1,13 @@
+<ul class="list-group container mt-5">
+    <li class="list-group-item active">Links Collection</li>
+
+    <li *ngIf="!(links$ | async)" class="list-group-item text-center text-danger mt-5">No Links Available</li> 
+
+    <li 
+        *ngFor="let link of (links$ | async)"
+        class="list-group-item">
+            {{link._id}} | 
+            {{link.title}} | 
+            {{link.url}}
+    </li>
+  </ul>
